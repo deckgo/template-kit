@@ -1,0 +1,14 @@
+@import "./deckdeckgo-slide";
+@import "./deckdeckgo-slide-slots";
+
+div.deckgo-slide {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+::slotted([slot="title"]),
+::slotted([slot="content"]) {
+  text-align: center;
+  user-select: text;
+}
