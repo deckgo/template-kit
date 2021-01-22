@@ -38,7 +38,7 @@ const parseProps = (props: JsonDocsProp[] | undefined): DeckDeckGoProp[] | undef
   }
 
   return props
-    .filter((prop: JsonDocsProp) => prop.reflectToAttr && ['string', 'number', 'boolean'].includes(prop.type))
+    .filter((prop: JsonDocsProp) => prop.reflectToAttr && ['string', 'number'].includes(prop.type))
     .map((prop: JsonDocsProp) => {
       return {
         name: prop.attr,
