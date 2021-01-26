@@ -46,7 +46,9 @@ Note: we do not have yet automated yes these renaming operations in our [Cli](ht
 
 ### Author
 
-TODO
+It is recommended to update the [author](https://github.com/deckgo/template-kit/blob/master/package.json#L42) in `package.json`. Provide a `name` and, `url`. If you share your template with the community, we will use these information to give you credits in our online editor. 
+
+You can also update the license in its related [file](https://github.com/deckgo/template-kit/blob/master/LICENSE) and this README. Note that currently, we only consider MIT templates to be shared with the community within our online editor.
 
 ### UI
 
