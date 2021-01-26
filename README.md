@@ -1,13 +1,51 @@
 # DeckDeckGo - Template Kit
 
+Create a template for your [DeckDeckGo] presentations.
+
 ## Table of contents
 
 - [Getting Started](#getting-started)
+- [Development](#development)
+    - [Naming][#naming]
+    - [UI](#ui)
+    - [Lifecycle](#lifecycle)
 - [License](#license)
 
 ## Getting Started
 
-TODO: Soon (current task in the pipeline).
+This kit help you create your own templates for [DeckDeckGo] slides.
+
+To get started, either use [this template](https://github.com/deckgo/template-kit/generate) to generate a new project or, execute our Cli in your shell.
+
+```
+npm init deckdeckgo
+```
+
+## Development
+
+The project, also sometimes referenced as "component", is developed with [Stencil](https://stenciljs.com). The template you are about to develop is nothing else than a Web Components.
+
+### Naming
+
+The default template's name is `my-template`. It should be renamed in your project as following:
+
+- Define a new [tag](https://github.com/deckgo/template-kit/blob/bad5acba265288abd5827b89e3c02245afb24b00/src/components/my-template/my-template.tsx#L14) name. Note that `deckdeckgo`, `deckgo` and `ddg` are reserved keywords.
+
+- Rename, if you wish, the related [folder](https://github.com/deckgo/template-kit/tree/master/src/components/my-template9, component and stylesheet
+
+- Update the [namespace](https://github.com/deckgo/template-kit/blob/bad5acba265288abd5827b89e3c02245afb24b00/stencil.config.ts#L11) in the `stencil.config.ts` configuration
+
+- Finally, change also the [name](https://github.com/deckgo/template-kit/blob/bad5acba265288abd5827b89e3c02245afb24b00/package.json#L2) in `package.json` and, `package-lock.json`
+
+Note: we do not have yet automated yes these renaming operations in our [Cli](https://github.com/deckgo/deckdeckgo/tree/master/cli) but, we do see the advantages. If you are willing to provide a PR to implement such features, we would love to get your contribution! 
+
+### UI
+
+TODO
+
+### Lifecycle
+
+TODO
 
 ## License
 
