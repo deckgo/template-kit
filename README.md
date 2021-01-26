@@ -6,7 +6,7 @@ Create a template for your [DeckDeckGo] presentations.
 
 - [Getting Started](#getting-started)
 - [Development](#development)
-    - [Naming][#naming]
+    - [Naming](#naming)
     - [UI](#ui)
     - [Lifecycle](#lifecycle)
 - [License](#license)
