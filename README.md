@@ -7,8 +7,13 @@ Create a template for your [DeckDeckGo] presentations.
 - [Getting Started](#getting-started)
 - [Development](#development)
     - [Naming](#naming)
+    - [Author](#author)
     - [UI](#ui)
     - [Lifecycle](#lifecycle)
+    - [Documentation](#documentation)
+      - [Properties](#properties)
+      - [Slots](#slots)
+- [Usage](#usage)
 - [License](#license)
 
 ## Getting Started
@@ -39,11 +44,31 @@ The default template's name is `my-template`. It should be renamed in your proje
 
 Note: we do not have yet automated yes these renaming operations in our [Cli](https://github.com/deckgo/deckdeckgo/tree/master/cli) but, we do see the advantages. If you are willing to provide a PR to implement such features, we would love to get your contribution! 
 
+### Author
+
+TODO
+
 ### UI
 
 TODO
 
 ### Lifecycle
+
+TODO
+
+#### Documentation
+
+TODO
+
+##### Properties
+
+TODO
+
+##### Slots
+
+TODO
+
+## Usage
 
 TODO
 

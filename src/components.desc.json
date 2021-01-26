@@ -1,5 +1,28 @@
 [
   {
-    "tag": "my-template"
+    "tag": "my-template",
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "placeholder": "An example of a custom property"
+      }
+    ],
+    "slots": [
+      {
+        "name": "content",
+        "placeholder": "Another example of a custom slot with a restricted list of usage",
+        "types": [
+          "h1",
+          "h2",
+          "h3",
+          "section"
+        ]
+      },
+      {
+        "name": "title",
+        "placeholder": "An example of a custom slot"
+      }
+    ]
   }
 ]

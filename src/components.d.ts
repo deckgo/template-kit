@@ -12,6 +12,10 @@ export namespace Components {
         "hideContent": () => Promise<void>;
         "lazyLoadContent": () => Promise<void>;
         "revealContent": () => Promise<void>;
+        /**
+          * An example of a custom property
+         */
+        "value": string;
     }
 }
 declare global {
@@ -28,6 +32,10 @@ declare global {
 declare namespace LocalJSX {
     interface MyTemplate {
         "onSlideDidLoad"?: (event: CustomEvent<void>) => void;
+        /**
+          * An example of a custom property
+         */
+        "value"?: string;
     }
     interface IntrinsicElements {
         "my-template": MyTemplate;
