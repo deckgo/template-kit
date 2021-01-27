@@ -8,11 +8,12 @@ Create a template for your [DeckDeckGo] presentations.
 - [Development](#development)
     - [Naming](#naming)
     - [Author](#author)
-    - [UI](#ui)
+    - [Rendering](#rendering)
+    - [Styling](#styling)  
     - [Lifecycle](#lifecycle)
     - [Documentation](#documentation)
-      - [Properties](#properties)
       - [Slots](#slots)
+      - [Properties](#properties)
 - [Usage](#usage)
 - [License](#license)
 
@@ -50,25 +51,123 @@ It is recommended to update the [author](https://github.com/deckgo/template-kit/
 
 You can also update the license in its related [file](https://github.com/deckgo/template-kit/blob/master/LICENSE) and this README. Note that currently, we only consider MIT templates to be shared with the community within our online editor.
 
-### UI
+### Rendering
 
-TODO
+Templates are rendered using JSX. If you are new to such declarative template syntax, you can have a look to the [introduction](https://stenciljs.com/docs/templating-jsx) provided by Stencil.
+
+To implement your custom template, its UI, you can modify the `render()` function of the component. You can replace part or, all the provided code but, it is important to not remove the class `deckgo-slide-container` added to the `host` element.
+
+If you want users to be able to edit the content of their slides when using your template, you should add some `slot`. You can skip these or, add as many slots as it fits your use case.
+
+As example, the component contains per default two slots `title` and `content`. These are going to be made editable in our online editor. If the template would be used in HTML, it would be use as following:
+
+```
+<deckgo-deck>
+  <my-template>
+    <h1 slot="title">My user edited title</h1>
+    <p slot="content">My user edited content</p>
+  </my-template>
+</deckgo-deck>
+```
+
+The default template also provides some slots which are used by the core of [DeckDeckGo] (`notes`, `background`, etc.). It is recommended to use these but, as described in the code, you can remove some if you rather like.
+
+### Styling
+
+Styling can be made with SCSS. It inherits two styles:
+
+- [deckdeckgo-slide.scss](https://github.com/deckgo/deckdeckgo/blob/master/utils/slide/styles/deckdeckgo-slide.scss) - Default spacing and positioning. You can override any properties or remove the import.
+- [deckdeckgo-slide-slots.scss](https://github.com/deckgo/deckdeckgo/blob/master/utils/slide/styles/deckdeckgo-slide-slots.scss) - The style of the default slots used by our core. It is recommended to stick to it as long as you do not remove these.
 
 ### Lifecycle
 
-TODO
+In addition to Stencil [lifecycle](https://stenciljs.com/docs/component-lifecycle), [DeckDeckGo] provides a variety of lifecycles related of the behavior of the presentation.
+
+These lifecycles have to be implemented. If you don't wish to perform any particular operation, stick to the default values.
+
+- `componentDidLoad`
+
+It triggers the event `this.slideDidLoad.emit();` to inform the core that the slide has been loaded / added. **Do not remove** this.
+
+- `beforeSwipe`
+
+Called before the swipe to next slide is happening. By returning `false`, it tells the core to not switch to next slide. If for example you want to animate elements upon arrow keys, it should not return `true` until you have animated everything.
+
+`enter` tells you about the direction. The name as the `boolean` is not the best, I agree. I am open to suggestion. Note that we support `RTL`.
+
+`reveal` is a flag in case the users as defined some of the elements added to the slide has to be revealed progressively.
+
+- `afterSwipe`
+
+Is triggered after the next slide is displayed.
+
+- `lazyLoadContent`
+
+A method which is called to trigger the lazy loading of its elements. For example, let's say you have four slides and, an image on the fourth slide. On load, the image won't be fetched for performance reason but, will automatically be loaded when you reach the third slides.
+
+Loading happens on slide number - 1 or + 1 (according the direction) except if you jump to a specific slide number. Then, its images and, these of previous and next slides are loaded.
+
+With such strategy, it ensures both loading performance and UI performance.
+
+- `showAllRevealElements` and `hideAllRevealElements`
+
+These are used to animate the elements which have been defined by the users are having to be "revealed". It is recommended to stick to it.
 
 #### Documentation
 
-TODO
+This chapter does not matter much if you "only" plan to use your template with our starter kit but, is really important if you plan to use it in our online editor.
 
-##### Properties
+In addition to the build itself, a `src/components.desc.json` file is going to be automatically generated based on the documentation added to your template's code.
 
-TODO
+This file describes the `properties` and `slots` of your template. Using these, our editor will then be able to present the appropriate options to the users.
 
 ##### Slots
 
-TODO
+Each `slot` which can be edited by the users should be documented. It contains the `name` (if apply) and a `description`.
+
+```
+/**
+ * @slot title - An example of a custom slot
+ */
+```
+
+In addition, it is also possible to restrict the usage of the `slot` to certain types of elements (comma separated list).
+
+```
+/**
+ * @slot content - Another example of a custom slot with a restricted list of usage - h1,h2,h3,section
+ */
+```
+
+These elements are:
+
+- `h1`
+- `h2`
+- `h3`
+- `section`
+- `ol`
+- `ul`
+- `deckgo-lazy-img` - The [DeckDeckGo] component for images which ensure lazy loading
+- `deckgo-highlight-code` - Block of code
+- `deckgo-markdown`  - Markdown
+- `deckgo-math` - Math formula
+- `deckgo-word-cloud` - Word of cloud
+
+##### Properties
+
+In addition to the documentation, it is worth to notice that properties should be reflected to attributes.
+
+Example:
+
+```
+/**
+ * An example of a custom property
+ */
+@Prop({reflect: true})
+value: string;
+```
+
+Note also that if your properties have effect on the UI and, need re-rendering, it is worth to also add [@Watch](https://stenciljs.com/docs/reactive-data) decorator to react on dynamic changes, such as these performed by the user in our editor.
 
 ## Usage
 
