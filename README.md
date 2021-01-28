@@ -15,13 +15,15 @@ Create a template for your [DeckDeckGo] presentations.
       - [Slots](#slots)
       - [Properties](#properties)
 - [Usage](#usage)
+  - [Online editor](#online-editor)
+  - [Starter kit](#starter-kit)
 - [License](#license)
 
 ## Getting Started
 
-This kit help you create your own templates for [DeckDeckGo] slides.
+This kit helps you create your own templates for [DeckDeckGo] slides.
 
-To get started, either use [this template](https://github.com/deckgo/template-kit/generate) to generate a new project or, execute our Cli in your shell.
+To get started, either use [this template](https://github.com/deckgo/template-kit/generate) to generate a new project or, execute our [cli] in your shell.
 
 ```
 npm init deckdeckgo
@@ -29,7 +31,7 @@ npm init deckdeckgo
 
 ## Development
 
-The project, also sometimes referenced as "component", is developed with [Stencil](https://stenciljs.com). The template you are about to develop is nothing else than a Web Components.
+The project is developed with [Stencil](https://stenciljs.com). The template you are about to develop is nothing else than a Web Components.
 
 ### Naming
 
@@ -43,13 +45,15 @@ The default template's name is `my-template`. It should be renamed in your proje
 
 - Finally, change also the [name](https://github.com/deckgo/template-kit/blob/bad5acba265288abd5827b89e3c02245afb24b00/package.json#L2) in `package.json` and, `package-lock.json`
 
-Note: we do not have yet automated yes these renaming operations in our [Cli](https://github.com/deckgo/deckdeckgo/tree/master/cli) but, we do see the advantages. If you are willing to provide a PR to implement such features, we would love to get your contribution! 
+Note: we do not have yet automated yes these renaming operations in our [cli] but, we do see the advantages. If you are willing to provide a PR to implement such features, we would love to get your contribution! 
 
 ### Author
 
 It is recommended to update the [author](https://github.com/deckgo/template-kit/blob/master/package.json#L42) in `package.json`. Provide a `name` and, `url`. If you share your template with the community, we will use these information to give you credits in our online editor. 
 
 You can also update the license in its related [file](https://github.com/deckgo/template-kit/blob/master/LICENSE) and this README. Note that currently, we only consider MIT templates to be shared with the community within our online editor.
+
+Note: again, we do not have automated this in our [cli]. Contributions are welcomed.
 
 ### Rendering
 
@@ -171,10 +175,21 @@ Note also that if your properties have effect on the UI and, need re-rendering, 
 
 ## Usage
 
-TODO
+The templates you create are compatible with both our online editor and, starter kit. 
+
+### Online editor
+
+To use your template in our online editor, it has to be made available through a CDN. We support [Unpkg](https://unpkg.com/), [Cloudfare](https://www.cloudflare.com/cdn) and [jsDelivr](https://www.jsdelivr.com/). If you would like to use another one, [get in touch](https://deckdeckgo.com/en/contact).
+
+Once published, you can add it to your collection of [templates](https://deckdeckgo.com/templates) with the CDN url, its tag name and, the automatically generated description file `src/components.desc.json`.
+
+### Starter kit
+
+If you are looking to use your template with our starter kit, you can import it through the `/dist/loader` once you have added it as a dependency of your project.
 
 ## License
 
 MIT © [David Dal Busco](mailto:david.dalbusco@outlook.com) and [Nicolas Mattia](mailto:nicolas@nmattia.com)
 
 [deckdeckgo]: https://deckdeckgo.com
+[cli]: https://github.com/deckgo/deckdeckgo/tree/master/cli
