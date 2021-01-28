@@ -39,7 +39,7 @@ The default template's name is `my-template`. It should be renamed in your proje
 
 - Define a new [tag](https://github.com/deckgo/template-kit/blob/bad5acba265288abd5827b89e3c02245afb24b00/src/components/my-template/my-template.tsx#L14) name. Note that `deckdeckgo`, `deckgo` and `ddg` are reserved keywords.
 
-- Rename, if you wish, the related [folder](https://github.com/deckgo/template-kit/tree/master/src/components/my-template9, component and stylesheet
+- Rename, if you wish, the related [folder](https://github.com/deckgo/template-kit/tree/master/src/components/my-template9), component and stylesheet
 
 - Update the [namespace](https://github.com/deckgo/template-kit/blob/bad5acba265288abd5827b89e3c02245afb24b00/stencil.config.ts#L11) in the `stencil.config.ts` configuration
 
