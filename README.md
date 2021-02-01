@@ -33,6 +33,12 @@ npm init deckdeckgo
 
 The project is developed with [Stencil](https://stenciljs.com). The template you are about to develop is nothing else than a Web Components.
 
+To run a local server and, test your template in your favorite browser, execute the following command in the template's root folder:
+
+```
+npm run start
+```
+
 ### Naming
 
 The default template's name is `my-template`. It should be renamed in your project as following:
