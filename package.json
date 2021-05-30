@@ -23,16 +23,16 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@deckdeckgo/slide-utils": "^2.6.1"
+    "@deckdeckgo/slide-utils": "^4.0.3"
   },
   "devDependencies": {
-    "@stencil/core": "^2.3.0",
+    "@stencil/core": "^2.5.2",
     "@stencil/postcss": "^2.0.0",
     "@stencil/sass": "^1.4.1",
-    "@types/node": "^14.14.22",
-    "autoprefixer": "^10.2.1",
-    "husky": "^4.3.8",
-    "prettier": "2.2.1",
+    "@types/node": "^15.6.1",
+    "autoprefixer": "^10.2.6",
+    "husky": "^6.0.0",
+    "prettier": "2.3.0",
     "pretty-quick": "^3.1.0"
   },
   "repository": {
