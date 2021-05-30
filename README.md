@@ -89,6 +89,9 @@ Styling can be made with SCSS. It inherits two styles:
 - [deckdeckgo-slide.scss](https://github.com/deckgo/deckdeckgo/blob/master/utils/slide/styles/deckdeckgo-slide.scss) - Default spacing and positioning. You can override any properties or remove the import.
 - [deckdeckgo-slide-slots.scss](https://github.com/deckgo/deckdeckgo/blob/master/utils/slide/styles/deckdeckgo-slide-slots.scss) - The style of the default slots used by our core. It is recommended to stick to it as long as you do not remove these.
 
+The template is provided with a default "16 / 9" styling ratio. It means that regardless of the device or, the configuration (`direction`) of the deck, the slide will be presented in "16 / 9" (centered horizontally and vertically in the screen).
+If you wish to provide you own ratio or, a responsive design, replace elements and, styles identified with the selector `deckgo-aspect-ratio-*`.
+
 ### Lifecycle
 
 In addition to Stencil [lifecycle](https://stenciljs.com/docs/component-lifecycle), [DeckDeckGo] provides a variety of lifecycles related of the behavior of the presentation.
