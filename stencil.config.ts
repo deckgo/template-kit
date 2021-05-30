@@ -3,6 +3,7 @@ import {JsonDocs} from '@stencil/core/internal';
 
 import {sass} from '@stencil/sass';
 import {postcss} from '@stencil/postcss';
+// @ts-ignore
 import autoprefixer from 'autoprefixer';
 
 import {generateDesc} from './deckdeckgo.desc';
