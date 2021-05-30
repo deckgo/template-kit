@@ -65,9 +65,13 @@ export class MyTemplate implements DeckdeckgoSlide {
     return (
       <Host class={{'deckgo-slide-container': true}}>
         <div class="deckgo-slide">
-          <slot name="title"></slot>
-          <slot name="content"></slot>
-          <p>An example of property: {this.value}</p>
+          <div class="deckgo-aspect-ratio-container">
+            <div class="deckgo-aspect-ratio-content">
+              <slot name="title"></slot>
+              <slot name="content"></slot>
+              <p>An example of property: {this.value}</p>
+            </div>
+          </div>
 
           {this.renderDeckSlots()}
         </div>
