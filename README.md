@@ -187,7 +187,7 @@ The templates you create are compatible with both our online editor and, starter
 
 To use your template in our online editor, it has to be made available through a CDN. We support [Unpkg](https://unpkg.com/), [Cloudfare](https://www.cloudflare.com/cdn) and [jsDelivr](https://www.jsdelivr.com/). If you would like to use another one, [get in touch](https://deckdeckgo.com/en/contact).
 
-Once published, you can add it to your collection of [templates](https://deckdeckgo.com/templates) with the CDN url, its tag name and, the automatically generated description file `src/components.desc.json`.
+Once published, you can add it to your collection of [templates](https://app.deckdeckgo.com/templates) with the CDN url, its tag name and, the automatically generated description file `src/components.desc.json`.
 
 ### Starter kit
 
