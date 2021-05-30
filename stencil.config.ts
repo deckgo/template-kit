@@ -24,6 +24,9 @@ export const config: Config = {
         generateDesc(docs);
       },
     },
+    {
+      type: 'dist-custom-elements-bundle',
+    }
   ],
   plugins: [
     sass({
