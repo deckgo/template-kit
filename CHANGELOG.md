@@ -7,6 +7,7 @@
 ### Build
 
 - bump dependencies
+- output custom elements as a single bundle (`dist-custom-elements-bundle`)
 
 ### Docs
 
