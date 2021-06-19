@@ -136,7 +136,21 @@ This file describes the `properties` and `slots` of your template. Using these, 
 
 ##### Slots
 
-Each `slot` which can be edited by the users should be documented. It contains the `name` (if apply) and a `description`.
+`slot` can be used to make part of your slides editable by the users. These are placeholder inside your template and have to be rendered to the DOM.
+
+For example, the following would render an editable element identified by the name `title`. 
+
+```
+render() {
+  return (
+    <Host class={{'deckgo-slide-container': true}}>
+        <slot name="title"></slot>
+    </Host>
+  );
+}    
+```
+
+In addition, each of these `slot` have to be documented too. The documentation should contain the `name` (if apply) and a `description`.
 
 ```
 /**
