@@ -28,7 +28,13 @@ const parseSlots = (slots: JsonDocsSlot[] | undefined): DeckDeckGoSlot[] | undef
 
   return slots.map((slot: JsonDocsSlot) => {
     const docs: string[] | undefined = slot.docs?.split('-');
-    const types: string[] | undefined = docs && docs.length >= 2 ? docs[1]?.trim().split(',') : undefined;
+
+    const [, ...elements] = docs;
+    const types: string[] | undefined = elements
+      .join('-')
+      .trim()
+      .split(',')
+      .filter((element: string) => element !== '');
 
     return {
       name: slot.name,
