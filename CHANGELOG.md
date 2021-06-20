@@ -1,3 +1,13 @@
+# 1.1.1 (2021-06-20)
+
+### Fix
+
+- fix slots with dash as component name
+
+### Documentation
+
+-  note regarding slot render usage
+
 # 1.1.0 (2021-05-30)
 
 ### Features
